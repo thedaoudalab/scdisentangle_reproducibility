@@ -1,6 +1,7 @@
-torch
-torchvision
-torchaudio
+--extra-index-url https://download.pytorch.org/whl/cu117
+torch==2.0.1+cu117
+torchvision==0.15.2+cu117
+torchaudio==2.0.2+cu117
 pytorch-lightning==1.9.5
 pyro-ppl==1.8.6
 scvi-tools==0.20.3
