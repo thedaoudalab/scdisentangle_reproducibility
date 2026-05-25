@@ -1,5 +1,5 @@
-scGEN v2.1.0
-CPA (cpa-tools v0.8.8)
-biolord v0.0.3
-scDisInFact v0.1.0
-GEARS (cell-gears v0.1.2)
+- scGEN v2.1.0
+- CPA (cpa-tools v0.8.8)
+- biolord v0.0.3
+- scDisInFact v0.1.0
+- GEARS (cell-gears v0.1.2)
