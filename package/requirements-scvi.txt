@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+pytorch-lightning==1.9.5
+pyro-ppl==1.8.6
+scvi-tools==0.20.3
+jax==0.4.35
+jaxlib==0.4.35
+flax==0.10.4
+numpyro==0.18.0
+optax==0.2.4
+chex==0.1.89
+orbax-checkpoint==0.11.5
+tensorstore==0.1.73
+treescope==0.1.9

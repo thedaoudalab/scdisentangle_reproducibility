@@ -1,0 +1,11 @@
+name: scdisentangle
+channels: [conda-forge]
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - -r package/requirements.txt
+      - -r package/requirements-scvi.txt
+      - -e package/hygeia
+      - -e package/scdisentangle
+
