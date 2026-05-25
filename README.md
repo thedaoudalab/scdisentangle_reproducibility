@@ -11,6 +11,7 @@ conda create -n scdisentangle python=3.10 -y
 conda activate scdisentangle
 conda env config vars set SCDIS_ROOT=/abs/path/to/reproduce_results
 conda activate scdisentangle
+export PYTHONNOUSERSITE=1
 pip install -r package/requirements-scvi.txt
 pip install -r package/requirements.txt
 pip install -e package/hygeia -e package/scdisentangle
