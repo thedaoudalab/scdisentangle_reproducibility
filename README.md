@@ -19,7 +19,7 @@ pip install -e package/hygeia -e package/scdisentangle
 
 ## Data
 
-Place the raw h5ad files in `reproduce_results/Datasets/original_datasets/`:
+Place the raw h5ad files in `reproduce_results/Datasets/original_datasets/<dataset>/`:
 
 | Dataset | Accession / source |
 |---|---|
