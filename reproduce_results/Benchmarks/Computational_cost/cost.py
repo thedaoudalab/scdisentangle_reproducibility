@@ -26,10 +26,6 @@ SEED = 42
 DEVICE_ID = 0
 OOD_CELL_TYPE = 'B'
 
-print('='*60)
-print('COMPUTATIONAL COST BENCHMARK')
-print('='*60)
-
 gpu_name = torch.cuda.get_device_name(DEVICE_ID)
 gpu_mem_total = torch.cuda.get_device_properties(DEVICE_ID).total_memory / 1e9
 print(f'GPU: {gpu_name} ({gpu_mem_total:.0f} GB)')
@@ -111,9 +107,8 @@ for batch_size in BATCH_SIZES:
     print(f'Peak GPU memory: {peak_mem:.2f} GB')
 
 # Summary
-print('\n' + '='*60)
-print('SUMMARY')
-print('='*60)
+print('\n')
+
 print(f'GPU: {gpu_name}')
 print(f'Dataset: Kang ({n_cells} cells, {n_genes} genes)')
 print()
@@ -121,10 +116,6 @@ print()
 df = pd.DataFrame(results)
 print(df.to_string(index=False))
 
-# For appendix
-print('\n' + '='*60)
-print('FOR APPENDIX:')
-print('='*60)
 print(f'Hardware: {gpu_name}')
 print(f'Dataset: Kang PBMC ({n_cells} training cells, {n_genes} genes)')
 print()
