@@ -1,12 +1,7 @@
 """
-Computational cost benchmark (Supplementary Table 17).
-
-Measures scDisentangle time-per-epoch and peak GPU memory across batch sizes on
-the Kang PBMC dataset, and extrapolates full-training time at 521 epochs.
-
-Run:
-    export SCDIS_ROOT=/abs/path/to/reproduce_results   # set by the conda env var
-    python cost.py
+computational cost (Supplementary Table 17).
+export SCDIS_ROOT=/abs/path/to/reproduce_results   # set by the conda env var
+python cost.py
 """
 import time
 import os
