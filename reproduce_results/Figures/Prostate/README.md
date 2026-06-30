@@ -1,5 +1,5 @@
-The UMAP embeddings in **Fig. 4a** are sensitive to the exact builds of
-`umap-learn`, `numba`, `pynndescent`, or `llvmlite`. Different builds can shift the embedding even with fixed seed. To reproduce exactly, add the following code to the first cell of `disentangle.ipynb` 
+The UMAP embeddings in **Fig. 4a** are sensitive to the exact build of
+`umap-learn`, `numba`, `pynndescent`, and `llvmlite`. Different builds can shift the embedding even with fixed seed. To reproduce exactly, add the following code to the first cell of `disentangle.ipynb` 
 
 ```python
 import sys, subprocess, tempfile
