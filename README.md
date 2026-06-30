@@ -126,7 +126,7 @@ python get_pred_cast_cycle.py
 `Figures/Prostate/OOD_transition/transition_ood.py` first to get transition probabilities, then the three notebooks in that folder.
 
 
-### Latent structure: Fig. 1d, Fig. 5, Extended Data Figs. 8-10, Supplementary Fig. 17
+### Latent structure: Fig. 1d, Fig. 5, Extended Data Figs. 8-10, Supplementary Figs. 14-17
 
 - First run `Figures/<dataset>/disentangle.ipynb`
 
