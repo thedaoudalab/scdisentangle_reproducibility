@@ -126,11 +126,11 @@ python get_pred_cast_cycle.py
 `Figures/Prostate/OOD_transition/transition_ood.py` first to get transition probabilities, then the three notebooks in that folder.
 
 
-### Latent structure: Fig. 1c, Fig. 5, Extended Data Figs. 8-10, Supplementary Fig. 17
+### Latent structure: Fig. 1d, Fig. 5, Extended Data Figs. 8-10, Supplementary Fig. 17
 
 - First run `Figures/<dataset>/disentangle.ipynb`
 
-- Pairwise correlation and mutual information between latent factors on Kang (Fig. 1c, Extended Data Fig. 8): Run `Figures/Kang/orthogonal_factors/pairwise corr and MI.ipynb`
+- Pairwise correlation and mutual information between latent factors on Kang (Fig. 1d, Extended Data Fig. 8): Run `Figures/Kang/orthogonal_factors/pairwise corr and MI.ipynb`
 
 - For each of Kang, Hao (Seurat), and B-ALL (Leukemia), run the numbered notebooks in `Figures/<dataset>/latent_structure/` in order. This generates Fig. 5, Extended Data Figs. 9 and 10, and Supplementary Figs. 14-16.
 
