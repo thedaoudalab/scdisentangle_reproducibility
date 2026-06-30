@@ -132,7 +132,7 @@ python get_pred_cast_cycle.py
 
 - Pairwise correlation and mutual information between latent factors on Kang (Fig. 1c, Extended Data Fig. 8): Run `Figures/Kang/orthogonal_factors/pairwise corr and MI.ipynb`
 
-- For each of Kang, Hao (Seurat), and B-ALL (Leukemia), run the numbered notebooks in `Figures/<dataset>/latent_structure/` in order. This generates Fig. 5, Extended Data Figs. 9 and 10, and Supplementary Figs. 14-17.
+- For each of Kang, Hao (Seurat), and B-ALL (Leukemia), run the numbered notebooks in `Figures/<dataset>/latent_structure/` in order. This generates Fig. 5, Extended Data Figs. 9 and 10, and Supplementary Figs. 14-16.
 
 - Perturbation-effect decomposition (Supplementary Fig. 17): Run the two notebooks under
 `Figures/Kang/latent_structure/Perturbation effect across levels/` (
