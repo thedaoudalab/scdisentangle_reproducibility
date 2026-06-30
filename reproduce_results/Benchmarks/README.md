@@ -3,5 +3,5 @@ The anndata objects var_names should mirror the original data var_names, and the
 `<pert_name>_org`: refering to the label of control samples (those taken as input to produce counterfactuals).
 `<pert_name>_pred` and `<pert_name>`: refering to the label of counterfactuals.
 e.g. a control sample with `condition=control` mapped to `condition=stimulated` would have `condition_org=control`, `condition_pred=stimulated`, and `condition=stimulated`.
-in addition to the context obs column e.g. `cell_type`.
+They should additionally contain to the context obs column e.g. `cell_type`, `zone`.
 
