@@ -1,5 +1,5 @@
 wandb:
-  wandb_log: True
+  wandb_log: False
   name: ''
   project: 'SCDISENTANGLE_REPRODUCE'
   group: 'SC: Kang train_val_ood'
