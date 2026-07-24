@@ -1,5 +1,5 @@
 wandb:
-  wandb_log: True
+  wandb_log: False
   name: 'OOD Donor: '
   project: 'SCDISENTANGLE_REPRODUCE'
   group: 'Myocarditis standard split_key'
