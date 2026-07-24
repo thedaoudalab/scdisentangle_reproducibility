@@ -1,5 +1,5 @@
 wandb:
-  wandb_log: True
+  wandb_log: False
   name: 'OOD time'
   project: 'SCDISENTANGLE_REPRODUCE'
   group: 'Prostate Disentangle'
