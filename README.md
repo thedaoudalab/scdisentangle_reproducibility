@@ -160,7 +160,6 @@ Notebooks in `reproduce_results/Supplementary Tables/`:
 - `Hyperparameters.ipynb` → Supplementary Table 13
 - `Benchmarks/Computational_cost/cost.py` → Supplementary Table 17
 
-## Citation
-
-See `CITATION.cff`. License: MIT.
+## License: 
+MIT. See `LICENSE`
 
