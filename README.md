@@ -35,7 +35,7 @@ Place the raw h5ad files in `reproduce_results/Datasets/original_datasets/<datas
 Then run the matching notebook in
 `reproduce_results/Datasets/preprocessing_scripts/<dataset>/`. Resulting preprocessed datasets are saved to
 `Datasets/preprocessed_datasets/`. For Norman, run the three notebooks in
-numeric order.
+numeric order. For exact Norman reproducibility, skip the first pre-processing notebbok and download the preprocessed `h5ad` file (See `reproduce_results/Datasets/preprocessing_scripts/Norman/README.md`).
 
 ## Reproducing the paper
 
