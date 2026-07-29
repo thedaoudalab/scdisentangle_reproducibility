@@ -48,10 +48,11 @@ The workflow for every dataset is:
 3. Predict: `Benchmarks/SCDISENTANGLE/<dataset>/get_predictions.py` (Norman
    uses `infer_norman_{1,2}.py`).
 4. Evaluate: `Benchmarks/y_pred_results/<dataset>.ipynb`.
-  - Note: This requires:
+  - Note that this requires:
     - Either training all models + running inference.
     - Use already computed metrics, and skip the `cm.compute_metrics` cells (jump directly to plotting and statistical testing cells).
-      - We provide the pre-computed metrics in `Benchmarks/y_pred_results/results.zip`. Unzip in the same folder: ```bash unzip weights.zip && rm weights.zip```
+      - We provide the pre-computed metrics in `Benchmarks/y_pred_results/results.zip`. Unzip in the same folder:
+                                            ```bash unzip weights.zip && rm weights.zip```
       
 6. Per-dataset analyses: notebooks in `Figures/<dataset>/`.
 
