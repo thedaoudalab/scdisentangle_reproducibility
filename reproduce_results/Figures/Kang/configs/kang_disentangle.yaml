@@ -9,7 +9,7 @@ UI:
   ide: True
 
 hardware:
-  device: 1
+  device: 0
 
 other:
   experiment_name: True
