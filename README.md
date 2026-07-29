@@ -53,7 +53,7 @@ The workflow for every dataset is:
     - Use already computed metrics, and skip the `cm.compute_metrics` cells (jump directly to plotting and statistical testing cells). We provide the pre-computed metrics in `Benchmarks/y_pred_results/results.zip`. Unzip in the same folder:
    ```bash
    cd Benchmarks/y_pred_results
-   unzip weights.zip && rm weights.zip
+   unzip results.zip && rm results.zip
    ```
       
 5. Per-dataset analyses: notebooks in `Figures/<dataset>/`.
