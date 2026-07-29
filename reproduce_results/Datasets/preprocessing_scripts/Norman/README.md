@@ -1,7 +1,7 @@
 # Norman (Perturb-seq) preprocessing
 
 Run these notebooks in order:
-1. `1) default_pp.ipynb`: filtering, HVG/DEG selection. It writes `norman.h5ad` to `../preprocessing_datasets/` 
+1. `1) default_pp.ipynb`: filtering, HVG/DEG selection. It writes `norman.h5ad` to `../../preprocessing_datasets/` 
 2. `2) create_splits.ipynb`
 3. `3) per_pert_split.ipynb`
 
