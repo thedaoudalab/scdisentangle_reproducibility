@@ -22,7 +22,7 @@ def compute_pvalues_by_context(
     metrics_dict,
     metric_name,
     run_ids,
-    anchor="scDisentangle",
+    anchor,
     higher_is_better=None,
     alpha=0.05,
 ):
