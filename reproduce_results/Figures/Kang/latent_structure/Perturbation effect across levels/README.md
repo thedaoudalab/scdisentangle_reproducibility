@@ -1,0 +1,1 @@
+- gseapy v1.1.8 is used for pathway analysis.
