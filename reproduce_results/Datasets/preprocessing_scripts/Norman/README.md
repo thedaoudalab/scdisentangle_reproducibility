@@ -8,7 +8,7 @@ Run these notebooks in order:
 ## Non-deterministic ordering
 
 `1) default_pp.ipynb` does not produce a deterministic **gene** or
-**perturbation** category ordering across runs. To reproduce paper numbers exactly, download the exact **`norman.h5ad`: [from Zenodo](https://zenodo.org/records/21543559/files/norman.h5ad?download=1)**, place it in `../../preprocessed_datasets/Norman/` and skip `1) default_pp.ipynb`.
+**perturbation** category ordering across runs. To reproduce paper numbers exactly, download the exact **`norman.h5ad`: [from Zenodo](https://zenodo.org/records/21543559/files/norman.h5ad?download=1)**, place it in `../../preprocessed_datasets/` and skip `1) default_pp.ipynb`.
 
 Source: Norman et al., *Science* **365**, 786–793 (2019), via scPerturb
 (Peidli et al., *Nat. Methods* **21**, 531–540, 2024; Zenodo
