@@ -52,6 +52,7 @@ The workflow for every dataset is:
     - Either training all models + running inference.
     - Use already computed metrics, and skip the `cm.compute_metrics` cells (jump directly to plotting and statistical testing cells). We provide the pre-computed metrics in `Benchmarks/y_pred_results/results.zip`. Unzip in the same folder:
    ```bash
+   cd `Benchmarks/y_pred_results/`
    unzip weights.zip && rm weights.zip
    ```
       
