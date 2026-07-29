@@ -1,4 +1,3 @@
-# migrate_paths.py — run from reproduce_results/:  python migrate_paths.py
 import re, glob, nbformat
 
 DATA = re.compile(r"(f?)(['\"])/data/Experiments/Benchmark/(?:SCDISENTANGLE_REPRODUCE|scdisentangle)([^'\"]*)\2")
@@ -7,7 +6,7 @@ SETUP = ("import os\n"
          "FIG_ROOT = os.environ.get('SCDIS_FIG', os.path.join(os.environ['SCDIS_ROOT'], 'figures'))")
 
 def repl_data(m):
-    q = m.group(2); inner = "'" if q == '"' else '"'      # opposite quote -> never nests
+    q = m.group(2); inner = "'" if q == '"' else '"'
     return f'f{q}{{os.environ[{inner}SCDIS_ROOT{inner}]}}{m.group(3)}{q}'
 def repl_fig(m):
     q = m.group(2)
