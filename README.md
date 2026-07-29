@@ -156,6 +156,11 @@ benchmark figures. To reproduce:
 3. Write predictions to
    `Benchmarks/<METHOD>/<DATASET>/predictions/<ood_cov>_<seed>.h5ad`
    (Norman uses `predictions/<scenario>/<pert>.h5ad`).
+   format of predictions:
+   - `.X`: predicted expression data (as predicted by the model, without any normalization), i.e. Counts for scDisentangle, CPA, and scDisInFact, or log-normalized for scGen, biolord, and GEARS. Since biolord trains on 1e4-normalized data, rescale to median via: expm1 -> rescale to median -> log1p. For count-based models (scDisentangle, CPA, and scDisInFact), set `adata_pred.uns['X_normalization'] == 'count'`, otherwise set it to `adata_pred.uns['X_normalization'] == 'log-norm'`. Normalization for count predictions is handled by the evaluation framework. All models are evaluated on the same scale (`sc.pp.normalize_total(adata_pred, target_sum=median)`, then `sc.pp.log1p(adata_pred)`). The median used for normalization is always computed on the training-set. For Norman Perturb-seq, that median is computed from the single-perturbation and control cells (i.e. the subset that is invariant to the OOD settings; all OOD settings in our benchmarks are double-perturbations).
+   - `.obs[<perturbation_name>_pred]` and `.obs[<perturbation_name>]`: Should be set to the predicted perturbation label.
+   - `.obs[<perturbation_name>_org]`: Should be set to the source cell label (cells taken as input e.g. `ctrl`).
+   Note that all models should take as input all control cells of the OOD context from the **training-set** (e.g. `control CD4 T` cells when the OOD context is `stimulated CD4 T cells`). **Validation-set control cells are not used for prediction**. In Norman, this corresponds to all control cells in the dataset (the validation-set does not include control cells).
 
 ## Supplementary tables
 
