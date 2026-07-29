@@ -83,9 +83,7 @@ def _make_layers(
     orthogonal=False,
     input_dropout=None,
     ):
-    """
-    ... (same docstring as before)
-    """
+   
     if isinstance(layers, torch.nn.modules.container.Sequential):
         return layers
 
@@ -125,10 +123,7 @@ def _make_layers(
     return nn.Sequential(*net_layers)
 
 def _linear_from_list(layers, use_skip_connections=False, latent_size=None):
-    """
-    ... (same docstring as before)
-    """
-    
+   
     assert isinstance(layers, list), 'Provide a list with nb of neurons/layer'
     nb_layers = len(layers)
     linear_layers = []
