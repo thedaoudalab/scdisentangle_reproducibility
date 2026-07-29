@@ -9,3 +9,5 @@ subprocess.run([sys.executable, "-m", "pip", "install", "--target", d, "--no-dep
                 "llvmlite==0.43.0", "graphtools==1.5.3"], check=True)
 sys.path.insert(0, d)
 ```
+
+The transition analysis additionally requires `scvelo==0.3.3`
