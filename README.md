@@ -4,6 +4,9 @@ Reproducibility code and analysis notebooks for *scDisentangle: sequential disen
 The package source for `scdisentangle` and `hygeia` is under `package/`.
 Everything needed to regenerate the results is under `reproduce_results/`.
 
+> **Package & tutorials.** The maintained `scdisentangle` and `hygeia` packages with tutorial notebooks live at [thedaoudalab/scDisentangle](https://github.com/thedaoudalab/scDisentangle).
+
+
 ## Setup
 
 ```bash
