@@ -81,7 +81,7 @@ def violin_plot(
             ax=ax
         )
 
-    # Beautification (Nature Biotech guidelines)
+    
     if despine:
     	sns.despine(trim=True, offset=10)
 
@@ -113,7 +113,7 @@ def plot_data(
     dpi=300,
     avg_point_size=12,
     colors=None,
-    y_min=None,                # ← NEW PARAMETER
+    y_min=None,              
     sort_order=None,
     stars=None
 ):
@@ -153,14 +153,14 @@ def plot_data(
     import pandas as pd
     import numpy as np
 
-    # ── Styling ──────────────────────────────────────────────────────────────────
+    
     plt.rcParams['figure.dpi'] = dpi
     plt.rcParams['savefig.dpi'] = dpi
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = 'DejaVu Sans'
     plt.rcParams['font.size'] = avg_point_size
 
-    # ── Prepare tidy DataFrame ───────────────────────────────────────────────────
+   
     records = [
         {'Method': m, 'Group': g, 'Value': v}
         for m, sub in data_dict.items()
@@ -184,7 +184,7 @@ def plot_data(
 
     df['Method'] = pd.Categorical(df['Method'], categories=method_order, ordered=True)
 
-    # ── Plot ─────────────────────────────────────────────────────────────────────
+    
     fig, ax = plt.subplots(figsize=figsize)
 
     if plot_type == 'boxplot':
@@ -220,11 +220,11 @@ def plot_data(
     else:
         raise ValueError("Unsupported plot_type. Choose 'boxplot' or 'barplot'.")
 
-    # ── Axis labels & ticks ──────────────────────────────────────────────────────
+    
     ax.set_xlabel(x_name or "Number of DEGs", fontsize=avg_point_size)
     ax.set_ylabel(y_name or "R² Mean", fontsize=avg_point_size)
 
-    if y_min is not None:                       # ← APPLY NEW PARAMETER
+    if y_min is not None:                      
         ax.set_ylim(bottom=y_min)
 
     if title:
@@ -248,20 +248,20 @@ def plot_data(
     sns.despine(trim=True, offset=10)
     plt.tight_layout()
 
-    # ── Significance stars (scDisentangle vs others) ────────────────────────────
+    # significance stars (scDisentangle vs others)
     if stars is not None:
         # stars is expected as stars[method][group] = star_string
         y_min_ax, y_max_ax = ax.get_ylim()
         y_range = y_max_ax - y_min_ax if y_max_ax > y_min_ax else 1.0
 
-        offset_frac = 0.02          # vertical offset above whisker / bar top
-        extra_margin_frac = 0.03    # extra headroom so stars are never clipped
+        offset_frac = 0.02          
+        extra_margin_frac = 0.03 
         star_fontsize = max(avg_point_size - 2, 6) / 1.6
 
         star_y_max = y_max_ax
 
         if plot_type == 'boxplot':
-            # --- Compute upper whisker (Q3 + 1.5*IQR, clipped to data) per (Method, Group)
+            
             grouped_vals = df.groupby(['Method', 'Group'], observed=True)['Value']
             whisker_tops = {}
 
@@ -269,10 +269,10 @@ def plot_data(
                 vals = np.asarray(vals.dropna(), dtype=float)
                 if vals.size == 0:
                     continue
-                whisker_top = vals.max()             # <- use absolute max
+                whisker_top = vals.max()             
                 whisker_tops[(m, g)] = float(whisker_top)
 
-            # --- Compute x-positions analytically (Seaborn default width=0.8, dodge=True)
+            
             n_groups = len(sort_order)
             n_methods = len(method_order)
             total_width = 0.8
@@ -302,7 +302,7 @@ def plot_data(
                     star_y_max = max(star_y_max, y)
 
         elif plot_type == 'barplot':
-            # Use underlying data maxima per (Method, Group) so stars sit above highest point
+            
             grouped_vals = df.groupby(['Method', 'Group'], observed=True)['Value']
             tops = grouped_vals.max().reset_index().rename(columns={'Value': 'top'})
             top_dict = {(row['Method'], row['Group']): float(row['top']) for _, row in tops.iterrows()}
@@ -319,12 +319,12 @@ def plot_data(
                     continue
 
                 bar_x = patch.get_x() + patch.get_width() / 2.0
-                y = top + offset_frac * y_range  # above highest value
+                y = top + offset_frac * y_range  
 
                 ax.text(
                     bar_x, y, star,
                     ha='center', va='bottom',
-                    fontsize=star_fontsize,   # already smaller
+                    fontsize=star_fontsize,  
                     color='black'
                 )
                 star_y_max = max(star_y_max, y)
@@ -348,12 +348,12 @@ def plot_data_refined(
     title=None,
     save_path=None,
     legend=True,
-    show_grid=False,          # default now matches the other plot (no grid)
+    show_grid=False,          
     figsize=(7.08, 5),
     dpi=300,
     avg_point_size=12,
     colors=None,
-    y_min=None,               # NEW PARAMETER
+    y_min=None,             
     sort_order=None,
     stars=None
 ):
@@ -393,14 +393,14 @@ def plot_data_refined(
     import pandas as pd
     import numpy as np
 
-    # ── Styling ──────────────────────────────────────────────────────────────────
+    
     plt.rcParams['figure.dpi'] = dpi
     plt.rcParams['savefig.dpi'] = dpi
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = 'DejaVu Sans'
     plt.rcParams['font.size'] = avg_point_size
 
-    # ── Prepare tidy DataFrame ───────────────────────────────────────────────────
+    
     records = [
         {'Method': m, 'Group': g, 'Value': v}
         for m, sub in data_dict.items()
@@ -422,7 +422,7 @@ def plot_data_refined(
 
     df['Method'] = pd.Categorical(df['Method'], categories=method_order, ordered=True)
 
-    # ── Plot ─────────────────────────────────────────────────────────────────────
+   
     fig, ax = plt.subplots(figsize=figsize)
 
     if plot_type == 'boxplot':
@@ -458,7 +458,7 @@ def plot_data_refined(
     else:
         raise ValueError("Unsupported plot_type. Choose 'boxplot' or 'barplot'.")
 
-    # ── Axis labels & ticks ──────────────────────────────────────────────────────
+   
     ax.set_xlabel(x_name or "Number of DEGs",
                   fontsize=avg_point_size + 1,
                   )
@@ -470,10 +470,10 @@ def plot_data_refined(
         ax.set_ylim(bottom=y_min)
 
     if title:
-        # Title non‑bold per NB style, but slightly larger
+       
         ax.set_title(title, fontsize=avg_point_size + 2, fontweight='normal')
 
-    # Tick params (bolder, similar to the other plot)
+    
     ax.tick_params(axis='both', which='both',
                    labelsize=avg_point_size,
                    width=0.8, length=4, color='black')
@@ -502,20 +502,20 @@ def plot_data_refined(
 
     plt.tight_layout()
 
-    # ── Significance stars (scDisentangle vs others) ────────────────────────────
+    
     if stars is not None:
         # stars is expected as stars[method][group] = star_string
         y_min_ax, y_max_ax = ax.get_ylim()
         y_range = y_max_ax - y_min_ax if y_max_ax > y_min_ax else 1.0
 
-        offset_frac = 0.02          # vertical offset above whisker / bar top
-        extra_margin_frac = 0.03    # extra headroom so stars are never clipped
+        offset_frac = 0.02         
+        extra_margin_frac = 0.03    
         star_fontsize = max(avg_point_size - 2, 6) / 1.6
 
         star_y_max = y_max_ax
 
         if plot_type == 'boxplot':
-            # --- Compute upper whisker (here: use absolute max) per (Method, Group)
+            
             grouped_vals = df.groupby(['Method', 'Group'], observed=True)['Value']
             whisker_tops = {}
 
@@ -526,7 +526,7 @@ def plot_data_refined(
                 whisker_top = vals.max()
                 whisker_tops[(m, g)] = float(whisker_top)
 
-            # --- Compute x-positions analytically (Seaborn default width=0.8, dodge=True)
+           
             n_groups = len(sort_order)
             n_methods = len(method_order)
             total_width = 0.8
@@ -586,7 +586,7 @@ def plot_data_refined(
                 )
                 star_y_max = max(star_y_max, y)
 
-        # Ensure stars are not clipped at the top of the axis
+        
         if star_y_max > y_max_ax:
             ax.set_ylim(top=star_y_max + extra_margin_frac * y_range)
 
