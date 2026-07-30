@@ -32,13 +32,13 @@ data:
   SUBSET: False
 
 OOD: 
-  apply: False #True
+  apply: False 
   filter_dict:
     status_control: 'Infected'
     zone: 'Insert'
 
 growing_neurons:
-  total_neurons: 16 #8
+  total_neurons: 16
   lr: 0.001
   decoder_name: 'decoder_post_train'
 
@@ -149,7 +149,7 @@ train:
   set_seed: 1
   
   main_train:
-    epochs: 521 #1001
+    epochs: 521 
 
   evaluate: True
 

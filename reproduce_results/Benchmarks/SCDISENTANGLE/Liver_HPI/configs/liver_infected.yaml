@@ -38,7 +38,7 @@ OOD:
     zone: 'Insert'
 
 growing_neurons:
-  total_neurons: 16 #8
+  total_neurons: 16 
   lr: 0.001
   decoder_name: 'decoder_post_train'
 
@@ -109,7 +109,7 @@ optimizers:
 
   decoder_optimizer:
     models: ['encoder_pretrain', 'decoder']
-    lr: [0.0001, 0.0001, 0.0001] #IThird for PXR
+    lr: [0.0001, 0.0001, 0.0001] 
 
 losses:
 

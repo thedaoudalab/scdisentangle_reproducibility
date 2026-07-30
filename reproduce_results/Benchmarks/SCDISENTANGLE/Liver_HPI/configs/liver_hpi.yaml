@@ -149,7 +149,7 @@ train:
   set_seed: 1
   
   main_train:
-    epochs: 521 #1001
+    epochs: 521 
 
   evaluate: True
 

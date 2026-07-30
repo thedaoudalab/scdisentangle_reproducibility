@@ -93,7 +93,7 @@ decoder_parameters:
     n_layers: 3
     n_hidden: 1024
     
-    #pxr_lr: 0.0001 #0.001
+    
 
 embedders:
   condition_embedder:
@@ -140,7 +140,7 @@ train:
   set_seed: 1
   
   main_train:
-    epochs: 521 #1001
+    epochs: 521
 
   evaluate: True
 
@@ -208,7 +208,7 @@ evaluations:
 
 save_experiment:
   apply: True
-  experiment_path: 'weights/' #'experiments/oods1_2048bs_meanfix'
+  experiment_path: 'weights/'
   save_weights:
     apply: True
     interval: 200
