@@ -99,7 +99,7 @@ def compute_metrics(
         # Compute metrics
         all_metrics = {}
                         
-        # Correlation metrics: nested dict (metric -> {n_degs: value})
+        # Correlation metrics: nested dict, format (metric_name: {n_degs: value})
         print(pred_stim.X.mean(), pred_stim.shape, pert_name)
         corr_metrics = mt.get_correlations(
             _pred_stim=pred_stim,
@@ -122,7 +122,7 @@ def compute_metrics(
             )
         all_metrics.update(dist_metrics)
 
-        # Subset true_ctrl to only include train CTRL cells!
+        # Subset true_ctrl to only include train CTRL cells
         # true_ctrl = true_ctrl[true_ctrl.obs[split_key] == "train"].copy()
 
         if method_name not in ['context-agnostic', 'perturbation-agnostic'] and 'sc_cell_ids' in pred_stim.obs.columns.tolist():
@@ -139,7 +139,7 @@ def compute_metrics(
                 true_ctrl.obs['sc_cell_ids'].to_numpy()
                         )
     
-            # Single-cell preservation metric
+            # Single-cell preservation metric (Identity preservation)
             sc_sim_nested = mt.get_sc_similarity(
                 _pred_stim=pred_stim,
                 _true_ctrl=true_ctrl,

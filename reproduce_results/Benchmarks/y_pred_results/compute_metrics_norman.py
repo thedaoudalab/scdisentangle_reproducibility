@@ -113,7 +113,7 @@ def compute_metrics(
             # Compute metrics
             all_metrics = {}
                     
-            # Correlation metrics: nested dict (metric -> {n_degs: value})
+            # Correlation metrics: nested dict, format (metric: {n_degs: value})
             corr_metrics = mt.get_correlations(
                 _pred_stim=pred_stim,
                 _true_stim=true_stim,
@@ -205,7 +205,7 @@ def compute_metrics_baselines(
     custom_name,
 ):
     """
-    Compute correlation and distance-based metrics for counterfactual predictions.
+    Compute metrics for counterfactual predictions
     """
     with open(
         f"../../Datasets/preprocessed_datasets/per_pert_splits_{scenario}.json",

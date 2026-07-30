@@ -24,14 +24,14 @@ def order_linkage(Z, clusters, desired_order):
     pos = {label_to_idx[c]: p for p, c in enumerate(desired_order)}
 
     def _leaves(node):
-        """All leaf indices under `node`."""
+        """all leaf indices under node"""
         if node < n:
             return [int(node)]
         row = int(node - n)
         return _leaves(int(Z_out[row, 0])) + _leaves(int(Z_out[row, 1]))
 
     def _min_pos(node):
-        """Smallest desired position among leaves of `node`."""
+        """the smallest desired position among leaves of node"""
         return min(pos[lf] for lf in _leaves(node))
 
     for row in range(len(Z_out)):

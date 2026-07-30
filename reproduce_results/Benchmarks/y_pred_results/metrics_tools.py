@@ -113,7 +113,7 @@ def compute_pvalues_by_context(
         else:
             star = ""
 
-        # log pvalues & stars
+        # log p vals and significance stars
         p_values.setdefault(competitor, {})[group] = p_comb
         stars.setdefault(competitor, {})[group] = star
 
@@ -166,9 +166,9 @@ def compute_pvalues(
             
             # greater = scDisentangle better
             if higher_is_better:
-                diff = a - b   # positive = scDisentangle larger/better
+                diff = a - b   # positive = scDisentangle is better
             else:
-                diff = b - a   # positive=scDisentangle smaller/better
+                diff = b - a   # positive=scDisentangle is smaller
 
             # if diff is zero = no superiority
             if np.allclose(diff, 0):

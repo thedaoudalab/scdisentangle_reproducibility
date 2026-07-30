@@ -1,6 +1,6 @@
 """
-computational cost (Supplementary Table 17).
-export SCDIS_ROOT=/abs/path/to/reproduce_results   # set by the conda env var
+computational cost (Supplementary Table 17)
+export SCDIS_ROOT=/abs/path/to/reproduce_results  # set by the conda env var
 python cost.py
 """
 import time
@@ -66,7 +66,7 @@ for batch_size in BATCH_SIZES:
     split_key = f'split_stimulated_{OOD_CELL_TYPE}'
     train_dl, val_dl, test_dl = dataset.train_val_ood_key(batch_size=batch_size, split_key=split_key)
 
-    # Get full dataloader for evaluation
+    # get full dataloader for evaluation
     full_dataloader = dataset.get_dataloader(batch_size=2000)
 
     n_cells = len(train_dl.dataset)

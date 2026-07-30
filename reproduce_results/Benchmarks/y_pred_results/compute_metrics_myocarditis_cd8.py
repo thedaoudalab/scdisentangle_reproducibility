@@ -21,7 +21,7 @@ def compute_metrics(
     custom_name='',
 ):
     """
-    Compute correlation and distance-based metrics for counterfactual predictions.
+    Compute metrics for counterfactual predictions
     """
     # Load preprocessed dataset
     adata_org = sc.read_h5ad(
@@ -123,7 +123,7 @@ def compute_metrics(
                 # Compute metrics
                 all_metrics = {}
                         
-                # Correlation metrics: nested dict (metric -> {n_degs: value})
+                # Correlation metrics: nested dict format: (metric_name: {n_degs: value})
                 corr_metrics = mt.get_correlations(
                     _pred_stim=pred_stim,
                     _true_stim=true_stim,
@@ -146,7 +146,7 @@ def compute_metrics(
                 )
                 all_metrics.update(dist_metrics)
                 
-                # Subset true_ctrl to only include train CTRL cells!
+                # Subset true_ctrl to only include train CTRL cells
                 true_ctrl = true_ctrl[true_ctrl.obs[split_key] == "train"].copy()
 
                 # Here sort pred_stim to have same order as true_ctrl (using obs['sc_cell_ids'])
@@ -272,7 +272,7 @@ def compute_metrics_baselines(
                 # Compute metrics
                 all_metrics = {}
                         
-                # Correlation metrics: nested dict (metric -> {n_degs: value})
+                # Correlation metrics: nested dict format, (metric:{n_degs: value})
                 corr_metrics = mt.get_correlations(
                     _pred_stim=pred_stim,
                     _true_stim=true_stim,
