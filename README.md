@@ -4,7 +4,7 @@ Reproducibility code and analysis notebooks for *scDisentangle: sequential disen
 The package source for `scdisentangle` and `hygeia` is under `package/`.
 Everything needed to regenerate the results is under `reproduce_results/`.
 
-> **Package & tutorials.** The maintained `scdisentangle` and `hygeia` packages with tutorial notebooks live at [thedaoudalab/scDisentangle](https://github.com/thedaoudalab/scDisentangle).
+> **Package and tutorials:** The maintained `scdisentangle` and `hygeia` packages with tutorial notebooks live at [thedaoudalab/scDisentangle](https://github.com/thedaoudalab/scDisentangle).
 
 
 ## Setup
@@ -46,7 +46,7 @@ All paths below are relative to `reproduce_results/`.
 
 The workflow for every dataset is:
 
-1. Preprocess (above).
+1. Pre-process (above).
 2. Train: `Benchmarks/SCDISENTANGLE/<dataset>/train_jobs*.py`.
 3. Predict: `Benchmarks/SCDISENTANGLE/<dataset>/get_predictions.py` (Norman
    uses `infer_norman_{1,2}.py`).
