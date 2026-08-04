@@ -1,3 +1,3 @@
 **Preprocessed datasets are saved here.**
 
-`<dataset_name>/<file.h5ad>`
+`<dataset_name>.h5ad`

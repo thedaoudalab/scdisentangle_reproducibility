@@ -10,16 +10,23 @@ Everything needed to regenerate the results is under `reproduce_results/`.
 ## Setup
 
 ```bash
-conda create -n scdisentangle python=3.10 -y
-conda activate scdisentangle
+conda create -n scdisentangle_reproduce python=3.10 -y
+conda activate scdisentangle_reproduce
 conda env config vars set SCDIS_ROOT=/abs/path/to/reproduce_results
-conda activate scdisentangle
+conda activate scdisentangle_reproduce
 export PYTHONNOUSERSITE=1
 pip install -r package/requirements-scvi.txt
 pip install -r package/requirements.txt
 pip install -e package/hygeia -e package/scdisentangle
-
 ```
+
+
+To use jupyter notebooks:
+```bash
+pip install ipykernel
+python -m ipykernel install --user --name=scdisentangle_reproduce --display-name="Python (scdisentangle_reproduce)"
+```
+Then in jupyter notebook, select the Kernel Python (scdisentangle_reproduce)
 
 ## Data
 
