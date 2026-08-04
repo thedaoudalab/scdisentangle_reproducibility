@@ -27,6 +27,7 @@ pip install ipykernel
 python -m ipykernel install --user --name=scdisentangle_reproduce --display-name="Python (scdisentangle_reproduce)"
 ```
 Then in jupyter notebook, select the Kernel Python (scdisentangle_reproduce)
+(This assumes Jupyter is already installed)
 
 ## Data
 
